@@ -8,3 +8,4 @@ class RentalForm(models.Model):
     items = models.JSONField(default=dict)
     place = models.CharField(max_length=50)
     orderNumber = models.TextField(null=True, blank=True, unique=True)
+    email = models.EmailField()
