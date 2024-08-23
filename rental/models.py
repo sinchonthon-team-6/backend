@@ -9,3 +9,4 @@ class RentalForm(models.Model):
     orderNumber = models.TextField(null=True, blank=True, unique=True)
     email = models.EmailField()
     price = models.IntegerField()
+
