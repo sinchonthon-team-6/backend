@@ -1,5 +1,4 @@
 from django.db import models
-from twilio.rest import Client
 
 class RentalForm(models.Model):
     userName = models.CharField(max_length=50)
