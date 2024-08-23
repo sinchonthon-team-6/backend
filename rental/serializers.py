@@ -8,7 +8,7 @@ from django.conf import settings
 class RentalFormSerializer(serializers.ModelSerializer):
     class Meta:
         model = RentalForm
-        fields = ['id', 'userName', 'phoneNumber', 'startDate', 'finishDate', 'items', 'place', 'orderNumber','email']
+        fields = ['id', 'userName', 'phoneNumber', 'startDate', 'finishDate', 'items', 'price', 'orderNumber','email']
 
     def create(self, validated_data):
         
@@ -32,7 +32,7 @@ class RentalFormSerializer(serializers.ModelSerializer):
         message = (
             f"물품이 성공적으로 신청되었습니다., {rental_form.userName}님!\n\n"
             f"당신의 주문번호는 다음과 같습니다.: {rental_form.orderNumber}.\n\n"
-            f"상세정보:\n여행목적지: {rental_form.place}\n"
+            f"상세정보:\n총 가격: {rental_form.price}\n"
             f"대여 시작 날짜: {rental_form.startDate}\n"
             f"대여 종료 날짜: {rental_form.finishDate}\n\n"
             f"즐거운 여행 되시길 바랍니다!"
