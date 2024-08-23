@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rental.views import create_rentalform
+from rental.views import get_create_rentalform
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rental',create_rentalform)
+    path('rental',get_create_rentalform)
 ]
