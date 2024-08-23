@@ -7,6 +7,6 @@ class RentalForm(models.Model):
     finishDate = models.DateField()
     items = models.JSONField(default=dict)
     orderNumber = models.TextField(null=True, blank=True, unique=True)
-    email = models.EmailField()
-    price = models.IntegerField()
+    email = models.EmailField(null=True)
+    price = models.IntegerField(null=True)
 
