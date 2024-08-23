@@ -6,5 +6,5 @@ class RentalForm(models.Model):
     startDate = models.DateField()
     finishDate = models.DateField()
     items = models.JSONField(default=list)
-    place = models.CharField(50)
+    place = models.CharField(max_length=50)
     orderNumber = models.TextField(null=True, blank=True, unique=True)
