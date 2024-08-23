@@ -19,12 +19,22 @@ def get_create_rentalform(request):
         query = request.GET.get('orderNumber',None)
         if query is None:
             return Response("주문번호가 필요합니다.", status=status.HTTP_400_BAD_REQUEST)
-        rentalForm = RentalForm.objects.get(orderNumber=query)
-        serializer = RentalFormSerializer(instance=rentalForm)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-    else:
+
+        try:
+            rentalForm = RentalForm.objects.get(orderNumber=query)
+            serializer = RentalFormSerializer(instance=rentalForm)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except RentalForm.DoesNotExist:
+            return Response("해당 주문번호의 대여 신청이 없습니다.", status=status.HTTP_404_NOT_FOUND)
+
+    elif request.method == 'DELETE':
         query = request.GET.get('orderNumber',None)
         if query is None:
             return Response("주문번호가 필요합니다.", status=status.HTTP_400_BAD_REQUEST)
-        RentalForm.objects.get(orderNumber=query).delete()
-        return Response('해당하는 대여 신청이 삭제되었습니다.',status=status.HTTP_204_NO_CONTENT)
+
+        try:
+            rentalForm = RentalForm.objects.get(orderNumber=query)
+            rentalForm.delete()
+            return Response("해당하는 대여 신청이 삭제되었습니다.", status=status.HTTP_200_OK)
+        except RentalForm.DoesNotExist:
+            return Response("해당 주문번호의 대여 신청이 없습니다.", status=status.HTTP_404_NOT_FOUND)
