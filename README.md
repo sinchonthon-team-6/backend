@@ -21,7 +21,7 @@
 
 
 
-##팀원 소개
+## 팀원 소개
 
 |역할|이름|소속|
 |------|---|---|
@@ -31,3 +31,30 @@
 |백엔드|박승범| |
 |백엔드|이서현| |
 |백엔드|황지은|이화여자대학교 컴퓨터공학과|
+
+## 파일 구조
+
+```plaintext
+📂 backend
+  📂 config # 프로젝트 설정 파일들이 위치한 폴더
+    ├─ __pycache__
+    ├─ asgi.py
+    ├─ settings.py
+    ├─ urls.py
+    ├─ wsgi.py
+    └─ __init__.py
+  📂 rental # 대여 관련 기능을 포함하는 앱 폴더
+    📂 migrations
+    ├─ __pycache__
+    ├─ admin.py
+    ├─ apps.py
+    ├─ models.py
+    ├─ serializers.py
+    ├─ tests.py
+    ├─ views.py
+    └─ __init__.py
+```
+
+## 개발 환경에서의 실행 방법
+## ERD
+## 배포 링크 
