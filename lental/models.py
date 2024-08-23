@@ -1,6 +1,6 @@
 from django.db import models
 
-class LentalForm(models.Model):
+class RentalForm(models.Model):
     userName = models.CharField(max_length=50)
     phoneNumber = models.CharField(max_length=50)
     startDate = models.DateField()
