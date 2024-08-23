@@ -17,7 +17,6 @@ def get_create_rentalform(request):
             return Response("Invalid Data", status=status.HTTP_400_BAD_REQUEST)
     else:
         query = request.GET.get('orderNumber',None)
-        print(query)
         if query is None:
             return Response("주문번호가 필요합니다.", status=status.HTTP_400_BAD_REQUEST)
         rentalForm = RentalForm.objects.get(orderNumber=query)

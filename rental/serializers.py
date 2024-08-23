@@ -6,7 +6,7 @@ import string
 class RentalFormSerializer(serializers.ModelSerializer):
     class Meta:
         model = RentalForm
-        fields = ['id', 'userName', 'phoneNumber', 'startDate', 'finishDate', 'items', 'place', 'orderNumber']
+        fields = ['id', 'userName', 'phoneNumber', 'startDate', 'finishDate', 'items', 'place', 'orderNumber','email']
 
     def create(self, validated_data):
         rental_form = RentalForm.objects.create(**validated_data)
