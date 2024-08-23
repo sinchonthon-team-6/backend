@@ -1,10 +1,15 @@
+from django.dispatch import receiver
 from django.shortcuts import render
 
 from rest_framework.decorators import api_view
+from django.db.models.signals import post_save
+
 from .serializers import RentalFormSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from .models import RentalForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 @api_view(['GET','POST','DELETE'])
 def get_create_rentalform(request):
@@ -31,5 +36,10 @@ def get_create_rentalform(request):
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
     
 >>>>>>> c8abbf7a8c967b8fb453e61d0be3605b20ba4fc8
+=======
+
+    
+>>>>>>> c475940c9052cbc3590b403851ba38afd5f49594
