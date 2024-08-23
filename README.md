@@ -1,4 +1,5 @@
 <div align="center"> <h1>✈️ 바로여행 ✈️</h1></div>
+<img width="1920" alt="5 (1)" src="https://github.com/user-attachments/assets/69817f44-9cc5-40f1-a8c9-6aeeae123849">
 
 ## 🌱 서비스 소개
 **딱 한 번만 필요한 여행 준비물, 사지 말고 대여하세요**
