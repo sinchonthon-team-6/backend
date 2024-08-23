@@ -1,4 +1,5 @@
 from django.db import models
+from twilio.rest import Client
 
 class RentalForm(models.Model):
     userName = models.CharField(max_length=50)
@@ -9,3 +10,4 @@ class RentalForm(models.Model):
     place = models.CharField(max_length=50)
     orderNumber = models.TextField(null=True, blank=True, unique=True)
     email = models.EmailField()
+
